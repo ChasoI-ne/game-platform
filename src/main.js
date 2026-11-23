@@ -1,60 +1,117 @@
 import './style.css'
-import heroImg from './assets/hero.png'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import { setupCounter } from './counter.js'
+import { footer, header, toastContainer } from './components.js'
+import { icon } from './icons.js'
+import { getGameById } from './data/games.js'
+import { renderHome } from './views/home.js'
+import { renderGames } from './views/games.js'
+import { renderDetail, renderNotFound } from './views/detail.js'
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.querySelector('#app')
 
-<div class="ticks"></div>
+function parseRoute() {
+  const raw = (window.location.hash || '#/').replace(/^#/, '')
+  const [pathname, search = ''] = raw.split('?')
+  const query = new URLSearchParams(search)
+  const segments = pathname.split('/').filter(Boolean)
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+  if (segments.length === 0) return { name: 'home', query }
+  if (segments[0] === 'games') return { name: 'games', query }
+  if (segments[0] === 'game' && segments[1]) {
+    return { name: 'game', params: { id: decodeURIComponent(segments[1]) }, query }
+  }
+  return { name: 'notfound', query }
+}
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+function showToast(message) {
+  const container = document.querySelector('#toast-container')
+  if (!container) return
 
-setupCounter(document.querySelector('#counter'))
+  const toast = document.createElement('div')
+  toast.className = 'toast'
+  toast.innerHTML = `${icon('info', { size: 18 })}<span></span>`
+  toast.querySelector('span').textContent = `${message}はまだ実装されていません`
+  container.appendChild(toast)
+  // レイアウトを確定させてからクラスを付与し、トランジションを確実に動かす
+  void toast.offsetWidth
+  toast.classList.add('is-visible')
+
+  window.setTimeout(() => {
+    toast.classList.remove('is-visible')
+    window.setTimeout(() => toast.remove(), 320)
+  }, 3200)
+}
+
+function closeMobileNav() {
+  const siteHeader = document.querySelector('#site-header')
+  const toggle = document.querySelector('#nav-toggle')
+  if (!siteHeader?.classList.contains('nav-open')) return
+  siteHeader.classList.remove('nav-open')
+  toggle?.setAttribute('aria-expanded', 'false')
+  toggle?.setAttribute('aria-label', 'メニューを開く')
+  if (toggle) toggle.innerHTML = icon('menu', { size: 22 })
+}
+
+function render() {
+  const route = parseRoute()
+  let view
+  let init
+
+  if (route.name === 'home') {
+    view = renderHome()
+  } else if (route.name === 'games') {
+    const result = renderGames(route)
+    view = result.html
+    init = result.init
+  } else if (route.name === 'game') {
+    const game = getGameById(route.params.id)
+    view = game ? renderDetail(game) : renderNotFound()
+  } else {
+    view = renderNotFound()
+  }
+
+  app.innerHTML = `${header(route)}<main id="main">${view}</main>${footer()}${toastContainer()}`
+  init?.()
+  window.scrollTo({ top: 0, behavior: 'auto' })
+}
+
+document.addEventListener('click', (event) => {
+  const toggle = event.target.closest('#nav-toggle')
+  if (toggle) {
+    const siteHeader = document.querySelector('#site-header')
+    const isOpen = siteHeader.classList.toggle('nav-open')
+    toggle.setAttribute('aria-expanded', String(isOpen))
+    toggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く')
+    toggle.innerHTML = icon(isOpen ? 'close' : 'menu', { size: 22 })
+    return
+  }
+
+  const dummy = event.target.closest('[data-dummy]')
+  if (dummy) {
+    event.preventDefault()
+    showToast(dummy.dataset.dummy)
+    return
+  }
+
+  if (event.target.closest('.main-nav a')) closeMobileNav()
+})
+
+document.addEventListener('submit', (event) => {
+  if (event.target.id !== 'header-search-form') return
+  event.preventDefault()
+  const query = new FormData(event.target).get('q')?.trim() ?? ''
+  window.location.hash = query ? `#/games?q=${encodeURIComponent(query)}` : '#/games'
+  event.target.querySelector('input')?.blur()
+})
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMobileNav()
+})
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 860) closeMobileNav()
+})
+
+window.addEventListener('hashchange', render)
+
+if (!window.location.hash) window.location.replace('#/')
+render()

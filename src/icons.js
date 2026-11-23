@@ -1,0 +1,43 @@
+const paths = {
+  search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>',
+  menu: '<path d="M4 7h16M4 12h16M4 17h16"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  heart: '<path d="M20.8 5.1a5.4 5.4 0 0 0-7.7 0L12 6.2l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 21l8.8-8.2a5.4 5.4 0 0 0 0-7.7Z"/>',
+  download: '<path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/>',
+  play: '<path d="m8 5 11 7-11 7V5Z" fill="currentColor" stroke="none"/>',
+  star: '<path d="m12 2.8 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.6l6.5-.9L12 2.8Z" fill="currentColor" stroke="none"/>',
+  arrowRight: '<path d="M4 12h16m0 0-6-6m6 6-6 6"/>',
+  arrowUpRight: '<path d="M7 17 17 7M8 7h9v9"/>',
+  chevronDown: '<path d="m6 9 6 6 6-6"/>',
+  chevronLeft: '<path d="m15 18-6-6 6-6"/>',
+  chevronRight: '<path d="m9 18 6-6-6-6"/>',
+  grid: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+  zap: '<path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/>',
+  cube: '<path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="M3 7v10l9 5 9-5V7M12 12v10"/>',
+  sword: '<path d="M21 3l-7 7m-3-3 3 3m-3-3-4-4-4 4 4 4 4-4Z"/><path d="m14 10-8 8-3 1 1-3 8-8"/>',
+  ghost: '<path d="M5 21V11a7 7 0 0 1 14 0v10l-3.5-2.2L12 21l-3.5-2.2L5 21Z"/><circle cx="9.2" cy="11" r="1.1" fill="currentColor" stroke="none"/><circle cx="14.8" cy="11" r="1.1" fill="currentColor" stroke="none"/>',
+  leaf: '<path d="M20 4C9 4 4 9 4 16a4 4 0 0 0 4 4c7 0 12-5 12-16Z"/><path d="M4 20c3-5 7-8 12-10"/>',
+  jump: '<path d="M3 21h6v-4h4v-4h4V9h3"/><path d="M17 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>',
+  crown: '<path d="M3 7l4.5 4.5L12 4l4.5 7.5L21 7l-2 13H5L3 7Z"/>',
+  book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  tag: '<path d="M20 13 13 20 3 10V3h7l10 10Z"/><circle cx="7.5" cy="7.5" r="1.3"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  monitor: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  sparkles: '<path d="m12 3 1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/>',
+  check: '<path d="m5 12 4.5 4.5L19 7"/>',
+  filter: '<path d="M3 5h18l-7 8v6l-4 2v-8L3 5Z"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4M8.6 13.4l6.8 4"/>',
+  eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+  flame: '<path d="M12 22c4 0 7-3 7-7 0-3-2-5-3-7-1 2-2 2-3 1 0-3-2-5-4-7 0 4-4 6-4 11 0 5 3 9 7 9Z"/>',
+  image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m4 18 5-5 4 4 3-3 4 4"/>',
+ info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+}
+
+export function icon(name, { size = 20, className = '', strokeWidth = 1.8 } = {}) {
+  const content = paths[name] ?? paths.info
+  return `<svg class="icon ${className}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${content}</svg>`
+}

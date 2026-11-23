@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-11-23T07:59:41.230Z",
+  "games": [
+    {
+      "name": "sample-game",
+      "url": "games/sample-game/index.html",
+      "thumbnail": null
+    }
+  ]
+}
