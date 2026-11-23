@@ -3,67 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b0d12" />
-    <title>ゲーム一覧 | INDIEPORT</title>
+    <meta name="theme-color" content="#ffffff" />
+    <title>INDIEPORT | インディーゲームを探す</title>
     <style>
       :root {
-        color-scheme: dark;
-        font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN",
-          "Noto Sans JP", sans-serif;
-        background: #0b0d12;
-        color: #e8eaf0;
+        color-scheme: light;
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --ink: #0f172a;
+        --muted: #64748b;
+        --line: #e2e8f0;
+        --accent: #6d28d9;
+        --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 28px rgba(15, 23, 42, 0.06);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
       }
 
       * { box-sizing: border-box; }
+      [hidden] { display: none !important; }
 
       body {
         margin: 0;
         min-height: 100vh;
         background:
-          radial-gradient(900px 500px at 50% -10%, #2a1b4d 0%, transparent 70%),
-          #0b0d12;
+          radial-gradient(840px 380px at 50% -130px, #ede9fe 0%, transparent 70%),
+          var(--bg);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
       }
 
-      .wrap {
-        width: min(1100px, 92vw);
-        margin: 0 auto;
-        padding: 72px 0 96px;
+      a { color: inherit; }
+      .wrap { width: min(1120px, 92vw); margin: 0 auto; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.86);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
       }
 
-      .kicker {
-        margin: 0 0 12px;
-        color: #a78bfa;
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        height: 68px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #7c3aed, #4f46e5);
+        color: #fff;
+        font-size: 17px;
+        font-weight: 800;
+        box-shadow: 0 6px 14px rgba(109, 40, 217, 0.25);
+      }
+
+      .brand-name {
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .header-tag { color: var(--muted); font-size: 13px; }
+
+      .header-right { display: flex; align-items: center; gap: 28px; }
+
+      .header-nav { display: flex; align-items: center; gap: 20px; }
+
+      .header-nav a {
+        color: var(--muted);
         font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.18em;
+        font-weight: 600;
+        text-decoration: none;
       }
 
-      h1 {
-        margin: 0 0 12px;
-        font-size: clamp(32px, 6vw, 52px);
-        line-height: 1.1;
+      .header-nav a:hover { color: var(--accent); }
+
+      .hero {
+        position: relative;
+        margin-top: 40px;
+        border-radius: 24px;
+        overflow: hidden;
+        background: #0b1020;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        background: url('./assets/hero.jpg') center 42% / cover no-repeat;
+        transform: scale(1.02);
+      }
+
+      .hero-shade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(8, 11, 20, 0.92) 0%,
+          rgba(8, 11, 20, 0.7) 38%,
+          rgba(8, 11, 20, 0.12) 78%,
+          rgba(8, 11, 20, 0.05) 100%
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+        padding: 92px 72px;
+        color: #fff;
+      }
+
+      .eyebrow {
+        margin: 0 0 20px;
+        color: #c4b5fd;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+      }
+
+      .hero h1 {
+        margin: 0 0 18px;
+        font-size: clamp(32px, 5.2vw, 54px);
+        line-height: 1.22;
+        letter-spacing: -0.02em;
       }
 
       .lead {
-        margin: 0 0 40px;
-        color: #9ca3af;
+        margin: 0;
+        max-width: 520px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 15px;
+        line-height: 1.9;
       }
 
-      code {
-        padding: 2px 7px;
-        border: 1px solid #2d3140;
-        border-radius: 6px;
-        background: #151823;
-        color: #c4b5fd;
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: #fff;
+        color: #0f172a;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
       }
 
-      .status { color: #9ca3af; }
-      .status.error { color: #fca5a5; }
+      .hero-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .catalog { padding-bottom: 100px; }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+
+      .section-head h2 { margin: 0; font-size: 18px; }
+
+      .count {
+        margin-left: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        width: min(290px, 100%);
+        padding: 11px 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+      }
+
+      .search:focus-within {
+        border-color: #a78bfa;
+        box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+      }
+
+      .search svg { flex: none; color: #94a3b8; }
+
+      .search input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        font-size: 14px;
+      }
+
+      .search input::placeholder { color: #94a3b8; }
+
+      .status { padding: 28px 0; color: var(--muted); font-size: 14px; }
+      .status.error { color: #dc2626; }
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 24px;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -72,77 +238,389 @@
       .card {
         display: block;
         overflow: hidden;
-        border: 1px solid #262a38;
-        border-radius: 14px;
-        background: #12151e;
-        color: inherit;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
         text-decoration: none;
-        transition: transform 0.18s ease, border-color 0.18s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
 
       .card:hover {
-        transform: translateY(-4px);
-        border-color: #7c3aed;
+        transform: translateY(-5px);
+        border-color: #c4b5fd;
+        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
       }
 
-      .media {
-        display: grid;
-        aspect-ratio: 16 / 10;
-        place-items: center;
-        background: linear-gradient(135deg, #1d1536, #111827);
-        overflow: hidden;
-      }
+      .cover { aspect-ratio: 16 / 10; background: #eef2ff; overflow: hidden; }
 
-      .media img {
+      .cover img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.4s ease;
       }
 
-      .mark {
-        color: #a78bfa;
-        font-size: 48px;
-        font-weight: 800;
-      }
+      .card:hover .cover img { transform: scale(1.04); }
 
-      .body { padding: 16px 18px 20px; }
+      .card-body { padding: 18px 20px 20px; }
 
-      .body h2 {
-        margin: 0 0 8px;
-        font-size: 17px;
+      .card-body h3 {
+        margin: 0 0 7px;
+        font-size: 16px;
+        line-height: 1.4;
         overflow-wrap: anywhere;
       }
 
-      .body p {
+      .card-body p {
         margin: 0;
-        color: #8b93a7;
-        font-size: 13px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 700;
       }
 
       .empty {
-        padding: 40px;
-        border: 1px dashed #2d3140;
-        border-radius: 14px;
-        color: #9ca3af;
+        padding: 64px 24px;
+        background: var(--surface);
+        border: 1px dashed var(--line);
+        border-radius: 18px;
+        color: var(--muted);
         text-align: center;
+      }
+
+      .about {
+        margin-bottom: 100px;
+        padding: 56px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .about-top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .about-avatar {
+        width: 64px;
+        height: 64px;
+        flex: none;
+        display: grid;
+        place-items: center;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #ede9fe, #e0e7ff);
+        font-size: 32px;
+      }
+
+      .about-top h2 { margin: 0 0 6px; font-size: 24px; }
+
+      .about-top p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 32px 40px;
+        margin-top: 32px;
+      }
+
+      .about-block h3 {
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .about-block p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .about-block ul {
+        display: grid;
+        gap: 9px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .about-block li {
+        position: relative;
+        padding-left: 16px;
+        color: #334155;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .about-block li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #a78bfa;
+      }
+
+      .about-block li b { color: var(--ink); }
+
+      .about-note {
+        margin: 36px 0 0;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: #94a3b8;
+        font-size: 12px;
+      }
+
+      .about-note a { color: var(--accent); text-decoration: none; }
+      .about-note a:hover { text-decoration: underline; }
+
+      .site-footer {
+        padding: 28px 0;
+        border-top: 1px solid var(--line);
+        color: #94a3b8;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .hero { margin-top: 28px; border-radius: 18px; }
+        .hero-content { padding: 56px 26px; }
+        .hero-shade {
+          background: linear-gradient(90deg, rgba(8, 11, 20, 0.92) 0%, rgba(8, 11, 20, 0.62) 100%);
+        }
+        .header-tag { display: none; }
+        .header-right { gap: 14px; }
+        .header-nav { gap: 14px; }
+        .about { padding: 32px 22px; border-radius: 18px; }
+        .about-top { align-items: flex-start; }
+        .about-grid { grid-template-columns: 1fr; gap: 26px; }
+        .section-head { align-items: stretch; }
+        .search { width: 100%; }
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <header>
-        <p class="kicker">INDIEPORT</p>
-        <h1>ゲーム一覧</h1>
-        <p class="lead">同じ階層の <code>games/</code> フォルダからゲームを読み込んでいます。</p>
-      </header>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">I</span>
+          <span class="brand-name">INDIEPORT</span>
+        </a>
+        <div class="header-right">
+          <span class="header-tag">インディーゲームの共有スペース</span>
+          <nav class="header-nav" aria-label="ページ内メニュー">
+            <a href="#catalog">作品</a>
+            <a href="#about">プロフィール</a>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-      <p id="status" class="status" role="status">読み込み中…</p>
-      <ul id="game-list" class="grid"></ul>
-    </div>
+    <main class="wrap">
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">DISCOVER INDIE GAMES</p>
+          <h1>心に残るゲームと、<br />出会おう。</h1>
+          <p class="lead">INDIEPORT に公開されている作品を、一覧からすぐに探せます。</p>
+          <a class="hero-cta" href="#catalog">作品を見る <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="catalog" id="catalog">
+        <div class="section-head">
+          <h2>すべての作品<span class="count" id="count">—</span></h2>
+          <label class="search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            <input id="search" type="search" placeholder="作品名で探す" aria-label="作品名で探す" />
+          </label>
+        </div>
+
+        <p id="status" class="status" role="status">作品を読み込んでいます…</p>
+        <p id="empty" class="empty" hidden>まだ作品が公開されていません。</p>
+        <ul id="game-list" class="grid"></ul>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-top">
+          <div class="about-avatar" aria-hidden="true">👤</div>
+          <div>
+            <h2>ちゃそい</h2>
+            <p>プログラミング、ゲーム制作、AI活用、音楽。興味のあることを、実際に動く形にするまで作るのが好きです。</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-block">
+            <h3>興味・趣味</h3>
+            <ul>
+              <li><b>音楽・吹奏楽</b> — 音楽を聴くこと、吹奏楽、音楽制作・編曲</li>
+              <li><b>音楽ゲーム</b> — 『太鼓の達人』など。高難易度譜面やリズムの分析</li>
+              <li><b>ゲーム・配信文化</b> — VTuberや配信の視聴、Minecraft</li>
+              <li><b>3D・デザイン</b> — アイソメトリック表現、ゲームUI、世界観づくり</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>技術・スキル</h3>
+            <p>主にWeb技術を使って、ブラウザ上で動くアプリやゲームを企画・制作しています。</p>
+            <ul>
+              <li>HTML / CSS / JavaScript / TypeScript</li>
+              <li>Web Audio API</li>
+              <li>Three.js</li>
+              <li>IndexedDB、JSON、Base64 などのデータ処理</li>
+              <li>Blender と MCP を組み合わせた3D制作</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>制作してきたもの</h3>
+            <ul>
+              <li><b>PSS Studio</b> — 音楽ゲームの譜面エディタ</li>
+              <li><b>Astra OS</b> — ブラウザ上で動く仮想OS</li>
+              <li><b>KTKエディタ</b> — カトカトーン形式の音楽シーケンサー</li>
+              <li><b>INDIEPORT</b> — ゲーム投稿サイト</li>
+              <li><b>NO MAN'S LAND</b> — 制作中のゲーム企画</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>AIとの開発</h3>
+            <ul>
+              <li><b>OpenCode</b> — コーディングエージェントとして調査・実装・評価を体系化</li>
+              <li><b>Claude / ChatGPT</b> — 実装、企画整理、仕様書、設計レビュー</li>
+              <li><b>Notion</b> — プロジェクト情報や知識のナレッジベース</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>大切にしていること</h3>
+            <ul>
+              <li>機能だけでなく、使える・面白い・UIが整っている完成度</li>
+              <li>根本原因を調査して直す</li>
+              <li>動作や画面表示まで実際に確認してから検証済みとする</li>
+              <li>READMEや仕様書で、目的と品質基準を明確にする</li>
+            </ul>
+          </div>
+
+          <div class="about-block">
+            <h3>これからの関心</h3>
+            <ul>
+              <li>AIエージェント中心の開発ワークフロー</li>
+              <li>Blender や MCP を組み合わせた3Dゲーム制作</li>
+              <li>ブラウザ技術による完成度の高いゲーム・アプリ</li>
+              <li>音楽ゲーム・音楽制作のツールと作品づくり</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="about-note">プロフィールは <a href="https://app.notion.com/p/421e2a7e2dba812ba06ae9f662175ee6" target="_blank" rel="noopener noreferrer">Notion の自己紹介</a> をもとに抜粋しています。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="wrap">© INDIEPORT</div></footer>
 
     <script type="module">
       const status = document.querySelector('#status')
+      const empty = document.querySelector('#empty')
       const list = document.querySelector('#game-list')
+      const search = document.querySelector('#search')
+      const count = document.querySelector('#count')
+
+      const PALETTES = [
+        ['#eef2ff', '#c7d2fe', '#6366f1'],
+        ['#ecfeff', '#a5f3fc', '#0891b2'],
+        ['#f0fdf4', '#bbf7d0', '#16a34a'],
+        ['#fff7ed', '#fed7aa', '#ea580c'],
+        ['#fdf2f8', '#fbcfe8', '#db2777'],
+        ['#f5f3ff', '#ddd6fe', '#7c3aed'],
+      ]
+
+      const SMALL_WORDS = new Set(['a', 'an', 'the', 'of', 'and', 'or', 'to', 'in', 'for', 'with'])
+
+      function displayName(name) {
+        const words = name
+          .replace(/[_-]+/g, ' ')
+          .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean)
+
+        return words
+          .map((word, index) => {
+            const lower = word.toLowerCase()
+            if (index > 0 && SMALL_WORDS.has(lower)) return lower
+            return word.charAt(0).toUpperCase() + word.slice(1)
+          })
+          .join(' ')
+      }
+
+      function hash(text) {
+        let value = 2166136261
+        for (const character of text) {
+          value ^= character.charCodeAt(0)
+          value = Math.imul(value, 16777619)
+        }
+        return value >>> 0
+      }
+
+      function coverFor(name) {
+        const seed = hash(name)
+        const [from, to, accent] = PALETTES[seed % PALETTES.length]
+        const x = 180 + ((seed >>> 5) % 300)
+        const y = 110 + ((seed >>> 11) % 180)
+        const radius = 70 + ((seed >>> 17) % 70)
+        const angle = ((seed >>> 7) % 120) - 60
+
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs>
+<rect width="640" height="400" fill="url(#g)"/>
+<circle cx="320" cy="200" r="190" fill="none" stroke="#ffffff" stroke-width="2" opacity=".4"/>
+<g transform="rotate(${angle} 320 200)">
+<circle cx="${x}" cy="${y}" r="${radius}" fill="${accent}" opacity=".16"/>
+<circle cx="${640 - x}" cy="${400 - y}" r="${radius * 0.6}" fill="#ffffff" opacity=".55"/>
+<rect x="${x - 150}" y="${y - 110}" width="300" height="220" rx="48" fill="none" stroke="${accent}" stroke-width="3" opacity=".35"/>
+</g>
+</svg>`
+        return `data:image/svg+xml,${encodeURIComponent(svg)}`
+      }
+
+      let cards = []
+
+      function applyFilter() {
+        const query = search.value.trim().toLowerCase()
+        let visible = 0
+
+        for (const card of cards) {
+          const show = card.name.includes(query)
+          card.element.hidden = !show
+          if (show) visible += 1
+        }
+
+        count.textContent = `${visible} 件`
+        empty.hidden = visible > 0
+        empty.textContent = query
+          ? '一致する作品が見つかりませんでした。'
+          : 'まだ作品が公開されていません。'
+      }
 
       try {
         const response = await fetch('./games.json', { cache: 'no-store' })
@@ -151,55 +629,50 @@
         const data = await response.json()
         const games = Array.isArray(data?.games) ? data.games : []
 
-        status.remove()
-
-        if (games.length === 0) {
-          const empty = document.createElement('p')
-          empty.className = 'empty'
-          empty.textContent = 'games/ フォルダに index.html を持つゲームがありません。'
-          list.replaceWith(empty)
-        }
-
-        for (const game of games) {
+        cards = games.map((game) => {
           const item = document.createElement('li')
           const link = document.createElement('a')
           link.className = 'card'
           link.href = game.url
 
-          const media = document.createElement('div')
-          media.className = 'media'
-
+          const cover = document.createElement('div')
+          cover.className = 'cover'
+          const image = document.createElement('img')
+          image.src = game.thumbnail || coverFor(game.name)
+          image.alt = ''
+          image.loading = 'lazy'
           if (game.thumbnail) {
-            const img = document.createElement('img')
-            img.src = game.thumbnail
-            img.alt = ''
-            img.loading = 'lazy'
-            img.addEventListener('error', () => img.remove(), { once: true })
-            media.appendChild(img)
-          } else {
-            const mark = document.createElement('span')
-            mark.className = 'mark'
-            mark.textContent = game.name.slice(0, 1).toUpperCase()
-            media.appendChild(mark)
+            image.addEventListener('error', () => { image.src = coverFor(game.name) }, { once: true })
           }
+          cover.appendChild(image)
 
           const body = document.createElement('div')
-          body.className = 'body'
-          const title = document.createElement('h2')
-          title.textContent = game.name
+          body.className = 'card-body'
+          const title = document.createElement('h3')
+          title.textContent = displayName(game.name)
           const hint = document.createElement('p')
-          hint.textContent = 'ゲームを開く →'
+          hint.textContent = 'プレイする →'
           body.append(title, hint)
 
-          link.append(media, body)
+          link.append(cover, body)
           item.appendChild(link)
           list.appendChild(item)
-        }
+
+          return {
+            element: item,
+            name: `${displayName(game.name)} ${game.name}`.toLowerCase(),
+          }
+        })
+
+        applyFilter()
+        status.remove()
       } catch (error) {
-        status.textContent = `games.json を読み込めませんでした: ${error.message}`
+        status.textContent = '作品一覧を読み込めませんでした。'
         status.classList.add('error')
         console.error(error)
       }
+
+      search.addEventListener('input', applyFilter)
     </script>
   </body>
 </html>

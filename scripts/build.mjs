@@ -14,6 +14,7 @@ await rm(distDir, { recursive: true, force: true })
 await mkdir(distDir, { recursive: true })
 
 await cp(join(root, 'index.html'), join(distDir, 'index.html'))
+await cp(join(root, 'assets'), join(distDir, 'assets'), { recursive: true })
 await writeManifest(join(distDir, 'games.json'))
 await writeManifest(join(root, 'games.json'))
 
