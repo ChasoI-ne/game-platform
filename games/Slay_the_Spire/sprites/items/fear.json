@@ -1,0 +1,7 @@
+{
+  "id": "fear",
+  "name": "恐怖ポーション",
+  "texture": "sprites/items/textures/fear.svg",
+  "description": "敵に脆弱を3付与。",
+  "category": "potion"
+}

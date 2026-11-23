@@ -1,0 +1,7 @@
+{
+  "id": "impervious",
+  "name": "鉄壁",
+  "texture": "sprites/items/textures/impervious.svg",
+  "description": "ブロックを30得る。消耗。",
+  "category": "card"
+}

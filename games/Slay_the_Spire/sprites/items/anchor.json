@@ -1,0 +1,7 @@
+{
+  "id": "anchor",
+  "name": "錨",
+  "texture": "sprites/items/textures/anchor.svg",
+  "description": "戦闘開始時にブロックを10得る。",
+  "category": "relic"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "flex",
+  "name": "屈伸",
+  "texture": "sprites/items/textures/flex.svg",
+  "description": "力量を2得る。ターン終了時に力量を2失う。",
+  "category": "card"
+}

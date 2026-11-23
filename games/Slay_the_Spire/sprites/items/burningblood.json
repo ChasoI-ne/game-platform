@@ -1,0 +1,7 @@
+{
+  "id": "burningblood",
+  "name": "燃える血",
+  "texture": "sprites/items/textures/burningblood.svg",
+  "description": "戦闘後にHPを6回復する。",
+  "category": "relic"
+}

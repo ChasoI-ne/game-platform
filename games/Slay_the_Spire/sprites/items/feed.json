@@ -1,0 +1,7 @@
+{
+  "id": "feed",
+  "name": "捕食",
+  "texture": "sprites/items/textures/feed.svg",
+  "description": "10ダメージ。敵を倒すと最大HPが3増える。消耗。",
+  "category": "card"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "disarm",
+  "name": "武装解除",
+  "texture": "sprites/items/textures/disarm.svg",
+  "description": "敵の力量を2減らす。消耗。",
+  "category": "card"
+}

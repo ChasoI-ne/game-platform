@@ -1,0 +1,7 @@
+{
+  "id": "clothesline",
+  "name": "クロスライン",
+  "texture": "sprites/items/textures/clothesline.svg",
+  "description": "12ダメージを与え、弱体を2付与する。",
+  "category": "card"
+}

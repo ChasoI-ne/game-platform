@@ -1,0 +1,7 @@
+{
+  "id": "dexterity",
+  "name": "敏捷ポーション",
+  "texture": "sprites/items/textures/dexterity.svg",
+  "description": "敏捷を2得る。",
+  "category": "potion"
+}

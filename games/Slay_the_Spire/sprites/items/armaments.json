@@ -1,0 +1,7 @@
+{
+  "id": "armaments",
+  "name": "武装",
+  "texture": "sprites/items/textures/armaments.svg",
+  "description": "ブロックを5得る。手札のカードを1枚、戦闘中のみ強化する。",
+  "category": "card"
+}

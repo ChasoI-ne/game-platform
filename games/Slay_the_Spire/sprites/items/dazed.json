@@ -1,0 +1,7 @@
+{
+  "id": "dazed",
+  "name": "目眩",
+  "texture": "sprites/items/textures/dazed.svg",
+  "description": "使用不可。",
+  "category": "status"
+}

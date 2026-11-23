@@ -1,0 +1,7 @@
+{
+  "id": "vajra",
+  "name": "ヴァジラ",
+  "texture": "sprites/items/textures/vajra.svg",
+  "description": "戦闘開始時に力量を1得る。",
+  "category": "relic"
+}

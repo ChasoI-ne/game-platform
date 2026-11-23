@@ -1,0 +1,7 @@
+{
+  "id": "weak",
+  "name": "弱体ポーション",
+  "texture": "sprites/items/textures/weak.svg",
+  "description": "すべての敵に弱体を3付与。",
+  "category": "potion"
+}

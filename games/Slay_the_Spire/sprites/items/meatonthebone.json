@@ -1,0 +1,7 @@
+{
+  "id": "meatonthebone",
+  "name": "骨付き肉",
+  "texture": "sprites/items/textures/meatonthebone.svg",
+  "description": "戦闘後、HPが50%未満なら12回復する。",
+  "category": "relic"
+}

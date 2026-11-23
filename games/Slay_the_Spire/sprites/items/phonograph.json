@@ -1,0 +1,7 @@
+{
+  "id": "phonograph",
+  "name": "蓄音機",
+  "texture": "sprites/items/textures/phonograph.svg",
+  "description": "戦闘中に初めて攻撃を出す時、すべての敵に脆弱を2付与。",
+  "category": "relic"
+}

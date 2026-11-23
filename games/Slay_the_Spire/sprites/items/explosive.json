@@ -1,0 +1,7 @@
+{
+  "id": "explosive",
+  "name": "爆発ポーション",
+  "texture": "sprites/items/textures/explosive.svg",
+  "description": "すべての敵に10ダメージ。",
+  "category": "potion"
+}

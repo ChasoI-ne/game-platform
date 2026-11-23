@@ -1,0 +1,7 @@
+{
+  "id": "fusionhammer",
+  "name": "融合ハンマー",
+  "texture": "sprites/items/textures/fusionhammer.svg",
+  "description": "毎ターンエネルギーを1多く得る。キャンプで鍛造できない。",
+  "category": "relic"
+}

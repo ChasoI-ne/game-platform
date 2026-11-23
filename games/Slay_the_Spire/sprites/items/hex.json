@@ -1,0 +1,7 @@
+{
+  "id": "hex",
+  "name": "呪い",
+  "texture": "sprites/items/textures/hex.svg",
+  "description": "使用不可。手札にあると敵が力量を1得る。",
+  "category": "status"
+}

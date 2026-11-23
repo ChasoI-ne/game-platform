@@ -1,0 +1,7 @@
+{
+  "id": "block",
+  "name": "ブロックポーション",
+  "texture": "sprites/items/textures/block.svg",
+  "description": "ブロックを12得る。",
+  "category": "potion"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "barricade",
+  "name": "バリケード",
+  "texture": "sprites/items/textures/barricade.svg",
+  "description": "ターン開始時にブロックが消えなくなる。",
+  "category": "card"
+}

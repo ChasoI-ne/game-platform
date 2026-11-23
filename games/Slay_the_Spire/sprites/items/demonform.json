@@ -1,0 +1,7 @@
+{
+  "id": "demonform",
+  "name": "鬼の姿",
+  "texture": "sprites/items/textures/demonform.svg",
+  "description": "ターン開始時に力量を2得る。",
+  "category": "card"
+}

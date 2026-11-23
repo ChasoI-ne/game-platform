@@ -1,0 +1,7 @@
+{
+  "id": "reaper",
+  "name": "死神の鎌",
+  "texture": "sprites/items/textures/reaper.svg",
+  "description": "すべての敵に4ダメージ。与えたダメージ分だけHPを回復。消耗。",
+  "category": "card"
+}

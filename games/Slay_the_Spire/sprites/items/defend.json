@@ -1,0 +1,7 @@
+{
+  "id": "defend",
+  "name": "防御",
+  "texture": "sprites/items/textures/defend.svg",
+  "description": "ブロックを5得る。",
+  "category": "card"
+}

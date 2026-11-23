@@ -1,0 +1,7 @@
+{
+  "id": "swift",
+  "name": "迅速ポーション",
+  "texture": "sprites/items/textures/swift.svg",
+  "description": "カードを3枚引く。",
+  "category": "potion"
+}

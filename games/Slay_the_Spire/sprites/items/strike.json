@@ -1,0 +1,7 @@
+{
+  "id": "strike",
+  "name": "打撃",
+  "texture": "sprites/items/textures/strike.svg",
+  "description": "6ダメージを与える。",
+  "category": "card"
+}

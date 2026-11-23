@@ -1,0 +1,7 @@
+{
+  "id": "sneckoeye",
+  "name": "スネコの目",
+  "texture": "sprites/items/textures/sneckoeye.svg",
+  "description": "毎ターンカードを2枚多く引く。カードのコストがランダム(0〜3)になる。",
+  "category": "relic"
+}

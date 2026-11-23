@@ -1,0 +1,7 @@
+{
+  "id": "uppercut",
+  "name": "アッパーカット",
+  "texture": "sprites/items/textures/uppercut.svg",
+  "description": "13ダメージ。弱体と脆弱を1付与。",
+  "category": "card"
+}

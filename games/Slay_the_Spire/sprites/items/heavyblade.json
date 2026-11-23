@@ -1,0 +1,7 @@
+{
+  "id": "heavyblade",
+  "name": "ヘビーブレード",
+  "texture": "sprites/items/textures/heavyblade.svg",
+  "description": "14ダメージ。力量が3倍効く。",
+  "category": "card"
+}

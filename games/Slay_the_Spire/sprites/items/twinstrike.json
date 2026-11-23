@@ -1,0 +1,7 @@
+{
+  "id": "twinstrike",
+  "name": "ツインストライク",
+  "texture": "sprites/items/textures/twinstrike.svg",
+  "description": "5ダメージを2回与える。",
+  "category": "card"
+}

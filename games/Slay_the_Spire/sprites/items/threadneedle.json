@@ -1,0 +1,7 @@
+{
+  "id": "threadneedle",
+  "name": "糸と針",
+  "texture": "sprites/items/textures/threadneedle.svg",
+  "description": "戦闘開始時にプレートアーマーを4得る。",
+  "category": "relic"
+}

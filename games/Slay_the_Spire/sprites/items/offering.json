@@ -1,0 +1,7 @@
+{
+  "id": "offering",
+  "name": "生贄",
+  "texture": "sprites/items/textures/offering.svg",
+  "description": "HPを6失い、エネルギーを2得てカードを3枚引く。消耗。",
+  "category": "card"
+}

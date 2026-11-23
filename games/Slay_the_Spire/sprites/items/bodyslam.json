@@ -1,0 +1,7 @@
+{
+  "id": "bodyslam",
+  "name": "ボディスラム",
+  "texture": "sprites/items/textures/bodyslam.svg",
+  "description": "現在のブロックと同量のダメージを与える。",
+  "category": "card"
+}

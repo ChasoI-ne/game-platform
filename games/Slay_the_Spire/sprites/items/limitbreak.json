@@ -1,0 +1,7 @@
+{
+  "id": "limitbreak",
+  "name": "限界突破",
+  "texture": "sprites/items/textures/limitbreak.svg",
+  "description": "現在の力量を2倍にする。消耗。",
+  "category": "card"
+}

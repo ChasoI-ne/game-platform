@@ -1,0 +1,7 @@
+{
+  "id": "battletrance",
+  "name": "バトルトランス",
+  "texture": "sprites/items/textures/battletrance.svg",
+  "description": "カードを3枚引く。このターン、これ以上カードを引けない。",
+  "category": "card"
+}

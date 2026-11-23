@@ -1,0 +1,7 @@
+{
+  "id": "oddmushroom",
+  "name": "奇妙なキノコ",
+  "texture": "sprites/items/textures/oddmushroom.svg",
+  "description": "自分に付与される脆弱と弱体が1ターン短くなる。",
+  "category": "relic"
+}

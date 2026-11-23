@@ -1,0 +1,7 @@
+{
+  "id": "inferno",
+  "name": "地獄の一撃",
+  "texture": "sprites/items/textures/inferno.svg",
+  "description": "12ダメージを与え、毒を2付与する。",
+  "category": "card"
+}

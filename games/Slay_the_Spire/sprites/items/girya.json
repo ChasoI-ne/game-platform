@@ -1,0 +1,7 @@
+{
+  "id": "girya",
+  "name": "ギルヤ",
+  "texture": "sprites/items/textures/girya.svg",
+  "description": "最大HPが5増える。",
+  "category": "relic"
+}

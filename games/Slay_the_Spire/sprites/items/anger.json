@@ -1,0 +1,7 @@
+{
+  "id": "anger",
+  "name": "怒り",
+  "texture": "sprites/items/textures/anger.svg",
+  "description": "6ダメージを与える。このカードのコピーを捨て札に加える。",
+  "category": "card"
+}

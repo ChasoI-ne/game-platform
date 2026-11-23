@@ -1,0 +1,7 @@
+{
+  "id": "burn",
+  "name": "火傷",
+  "texture": "sprites/items/textures/burn.svg",
+  "description": "使用不可。ターン終了時に2ダメージを受ける。",
+  "category": "status"
+}

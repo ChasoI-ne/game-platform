@@ -1,0 +1,7 @@
+{
+  "id": "kunai",
+  "name": "苦無",
+  "texture": "sprites/items/textures/kunai.svg",
+  "description": "スキルを3回出すごとに敏捷を1得る。",
+  "category": "relic"
+}

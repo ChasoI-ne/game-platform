@@ -1,0 +1,7 @@
+{
+  "id": "lantern",
+  "name": "ランタン",
+  "texture": "sprites/items/textures/lantern.svg",
+  "description": "戦闘の1ターン目、エネルギーを1多く得る。",
+  "category": "relic"
+}

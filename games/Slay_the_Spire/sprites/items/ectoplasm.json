@@ -1,0 +1,7 @@
+{
+  "id": "ectoplasm",
+  "name": "エクトプラズム",
+  "texture": "sprites/items/textures/ectoplasm.svg",
+  "description": "毎ターンエネルギーを1多く得る。戦闘でゴールドを得られない。",
+  "category": "relic"
+}

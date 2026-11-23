@@ -1,0 +1,7 @@
+{
+  "id": "fire",
+  "name": "炎のポーション",
+  "texture": "sprites/items/textures/fire.svg",
+  "description": "敵に20ダメージ。",
+  "category": "potion"
+}

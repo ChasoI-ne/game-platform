@@ -1,0 +1,7 @@
+{
+  "id": "redskull",
+  "name": "赤い頭蓋骨",
+  "texture": "sprites/items/textures/redskull.svg",
+  "description": "HPが50%未満の間、力量を3得る。",
+  "category": "relic"
+}

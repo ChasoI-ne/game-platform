@@ -1,0 +1,7 @@
+{
+  "id": "pommel",
+  "name": "柄打ち",
+  "texture": "sprites/items/textures/pommel.svg",
+  "description": "9ダメージを与え、カードを1枚引く。",
+  "category": "card"
+}

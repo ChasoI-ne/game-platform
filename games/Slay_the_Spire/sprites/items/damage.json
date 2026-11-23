@@ -1,0 +1,7 @@
+{
+  "id": "damage",
+  "name": "ダメージポーション",
+  "texture": "sprites/items/textures/damage.svg",
+  "description": "敵に12ダメージ。",
+  "category": "potion"
+}

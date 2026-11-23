@@ -1,0 +1,7 @@
+{
+  "id": "seeingred",
+  "name": "見切り",
+  "texture": "sprites/items/textures/seeingred.svg",
+  "description": "エネルギーを2得る。消耗。",
+  "category": "card"
+}

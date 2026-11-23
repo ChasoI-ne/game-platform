@@ -1,0 +1,7 @@
+{
+  "id": "ironwave",
+  "name": "アイアンウェーブ",
+  "texture": "sprites/items/textures/ironwave.svg",
+  "description": "ブロックを5得るし、5ダメージを与える。",
+  "category": "card"
+}

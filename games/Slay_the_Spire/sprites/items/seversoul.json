@@ -1,0 +1,7 @@
+{
+  "id": "seversoul",
+  "name": "魂の切断",
+  "texture": "sprites/items/textures/seversoul.svg",
+  "description": "10ダメージ。手札のカードをすべて消耗する。",
+  "category": "card"
+}

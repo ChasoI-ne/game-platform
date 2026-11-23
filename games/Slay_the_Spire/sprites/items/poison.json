@@ -1,0 +1,7 @@
+{
+  "id": "poison",
+  "name": "毒ポーション",
+  "texture": "sprites/items/textures/poison.svg",
+  "description": "敵に毒を5付与。",
+  "category": "potion"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "barbarian",
+  "name": "野蛮人",
+  "texture": "sprites/items/textures/barbarian.svg",
+  "description": "9ダメージを与え、HPを2失う。",
+  "category": "card"
+}

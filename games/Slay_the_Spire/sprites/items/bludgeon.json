@@ -1,0 +1,7 @@
+{
+  "id": "bludgeon",
+  "name": "猛打",
+  "texture": "sprites/items/textures/bludgeon.svg",
+  "description": "32ダメージを与える。",
+  "category": "card"
+}

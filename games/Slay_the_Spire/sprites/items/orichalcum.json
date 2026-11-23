@@ -1,0 +1,7 @@
+{
+  "id": "orichalcum",
+  "name": "オリハルコン",
+  "texture": "sprites/items/textures/orichalcum.svg",
+  "description": "ブロックが0の状態でターンを終えると、ブロックを6得る。",
+  "category": "relic"
+}

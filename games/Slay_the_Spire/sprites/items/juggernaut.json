@@ -1,0 +1,7 @@
+{
+  "id": "juggernaut",
+  "name": "ジャガーノート",
+  "texture": "sprites/items/textures/juggernaut.svg",
+  "description": "ブロックを得るするたび、ランダムな敵に5ダメージ。",
+  "category": "card"
+}

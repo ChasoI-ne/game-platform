@@ -1,0 +1,7 @@
+{
+  "id": "energy",
+  "name": "エネルギーポーション",
+  "texture": "sprites/items/textures/energy.svg",
+  "description": "エネルギーを2得る。",
+  "category": "potion"
+}

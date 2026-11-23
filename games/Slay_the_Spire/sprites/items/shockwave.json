@@ -1,0 +1,7 @@
+{
+  "id": "shockwave",
+  "name": "衝撃波",
+  "texture": "sprites/items/textures/shockwave.svg",
+  "description": "すべての敵に弱体と脆弱を3付与。消耗。",
+  "category": "card"
+}

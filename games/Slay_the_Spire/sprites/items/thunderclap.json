@@ -1,0 +1,7 @@
+{
+  "id": "thunderclap",
+  "name": "雷鳴",
+  "texture": "sprites/items/textures/thunderclap.svg",
+  "description": "すべての敵に4ダメージと脆弱を1付与。",
+  "category": "card"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "strength",
+  "name": "力量ポーション",
+  "texture": "sprites/items/textures/strength.svg",
+  "description": "力量を2得る。",
+  "category": "potion"
+}

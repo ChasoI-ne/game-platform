@@ -1,0 +1,7 @@
+{
+  "id": "carnage",
+  "name": "大虐殺",
+  "texture": "sprites/items/textures/carnage.svg",
+  "description": "20ダメージを与える。消耗。",
+  "category": "card"
+}

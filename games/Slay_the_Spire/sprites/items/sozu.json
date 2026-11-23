@@ -1,0 +1,7 @@
+{
+  "id": "sozu",
+  "name": "ソウ",
+  "texture": "sprites/items/textures/sozu.svg",
+  "description": "毎ターンエネルギーを1多く得る。ポーションを使えない。",
+  "category": "relic"
+}

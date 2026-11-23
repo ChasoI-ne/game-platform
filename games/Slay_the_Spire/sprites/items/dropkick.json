@@ -1,0 +1,7 @@
+{
+  "id": "dropkick",
+  "name": "ドロップキック",
+  "texture": "sprites/items/textures/dropkick.svg",
+  "description": "5ダメージ。敵が脆弱ならエネルギーを1得てカードを1枚引く。",
+  "category": "card"
+}

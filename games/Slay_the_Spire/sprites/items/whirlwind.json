@@ -1,0 +1,7 @@
+{
+  "id": "whirlwind",
+  "name": "つむじ風",
+  "texture": "sprites/items/textures/whirlwind.svg",
+  "description": "すべての敵にX回、5ダメージを与える。",
+  "category": "card"
+}

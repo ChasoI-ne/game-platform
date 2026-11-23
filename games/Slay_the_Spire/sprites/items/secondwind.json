@@ -1,0 +1,7 @@
+{
+  "id": "secondwind",
+  "name": "息を継ぐ",
+  "texture": "sprites/items/textures/secondwind.svg",
+  "description": "手札のスキルをすべて消耗し、1枚につきブロックを5得る。",
+  "category": "card"
+}

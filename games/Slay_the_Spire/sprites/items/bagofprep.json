@@ -1,0 +1,7 @@
+{
+  "id": "bagofprep",
+  "name": "準備の袋",
+  "texture": "sprites/items/textures/bagofprep.svg",
+  "description": "戦闘開始時にカードを2枚多く引く。",
+  "category": "relic"
+}

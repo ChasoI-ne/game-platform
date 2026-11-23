@@ -1,0 +1,7 @@
+{
+  "id": "bash",
+  "name": "殴打",
+  "texture": "sprites/items/textures/bash.svg",
+  "description": "8ダメージを与え、脆弱を2付与する。",
+  "category": "card"
+}

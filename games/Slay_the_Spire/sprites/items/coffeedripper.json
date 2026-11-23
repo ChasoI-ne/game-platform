@@ -1,0 +1,7 @@
+{
+  "id": "coffeedripper",
+  "name": "コーヒードリッパー",
+  "texture": "sprites/items/textures/coffeedripper.svg",
+  "description": "毎ターンエネルギーを1多く得る。キャンプで休めない。",
+  "category": "relic"
+}

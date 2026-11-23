@@ -1,0 +1,7 @@
+{
+  "id": "shuriken",
+  "name": "手裏剣",
+  "texture": "sprites/items/textures/shuriken.svg",
+  "description": "攻撃を3回出すごとに力量を1得る。",
+  "category": "relic"
+}

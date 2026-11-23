@@ -1,0 +1,7 @@
+{
+  "id": "inflame",
+  "name": "燃え上がる",
+  "texture": "sprites/items/textures/inflame.svg",
+  "description": "力量を2得る。",
+  "category": "card"
+}

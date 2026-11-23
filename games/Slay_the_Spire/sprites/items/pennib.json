@@ -1,0 +1,7 @@
+{
+  "id": "pennib",
+  "name": "ペン先",
+  "texture": "sprites/items/textures/pennib.svg",
+  "description": "10回目の攻撃が2倍のダメージになる。",
+  "category": "relic"
+}

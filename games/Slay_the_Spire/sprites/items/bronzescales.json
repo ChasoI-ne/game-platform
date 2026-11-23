@@ -1,0 +1,7 @@
+{
+  "id": "bronzescales",
+  "name": "青銅の鱗",
+  "texture": "sprites/items/textures/bronzescales.svg",
+  "description": "戦闘開始時に棘を3得る。",
+  "category": "relic"
+}

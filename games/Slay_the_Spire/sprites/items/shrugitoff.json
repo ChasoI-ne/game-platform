@@ -1,0 +1,7 @@
+{
+  "id": "shrugitoff",
+  "name": "軽くあしらう",
+  "texture": "sprites/items/textures/shrugitoff.svg",
+  "description": "ブロックを8得るし、カードを1枚引く。",
+  "category": "card"
+}

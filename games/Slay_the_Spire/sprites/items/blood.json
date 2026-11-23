@@ -1,0 +1,7 @@
+{
+  "id": "blood",
+  "name": "血液ポーション",
+  "texture": "sprites/items/textures/blood.svg",
+  "description": "最大HPの20%回復。",
+  "category": "potion"
+}
